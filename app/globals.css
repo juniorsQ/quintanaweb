@@ -121,6 +121,16 @@ body {
   color:var(--bs-dark);
 }
 
+.bgBodySkills{
+  background-color: #effbfe;
+  color:var(--bs-dark);
+}
+
+.bgBodyAwards{
+  background-color: #effbfe;
+  color:var(--bs-dark);
+}
+
 .bgborderbody{
   background-color:#292932;
 }

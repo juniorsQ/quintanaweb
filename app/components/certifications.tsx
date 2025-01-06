@@ -7,10 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Certifications(){
 return(
-    <section className="resume-section elementBorder" id="awards">
-    <div className="resume-section-content">
-    <div className="sectionHeader"><h1>Cursos y Certificaciones</h1></div>
-        <h2 className="mb-5">Cursos y Certificaciones</h2>
+    <section className="aboutSection bgBodyAbout elementBorder" id="awards">
+        <div className='sectionHeader'>    <h1>Cursos y Certificaciones</h1></div>
+            <div className="aboutSectionContent">
         <ul className="fa-ul mb-0">
             <li>
                 <span className="fa-li"><i className="fas fa-trophy text-warning"></i></span>

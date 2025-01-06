@@ -2,9 +2,11 @@ export default function Education(){
     return(
 
 // Education
-<section className="resume-section elementBorder" id="education">
-    <div className="resume-section-content">
-        <h2 className="mb-5">Educación</h2>
+<section className="aboutSection bgbody elementBorder" id="education">
+    <div className="sectionHeader">
+        <h1>Educación</h1>
+    </div>
+    <div className="aboutSectionContent">
         <div className="d-flex flex-column flex-md-row justify-content-between mb-5">
             <div className="flex-grow-1">
                 <h3 className="mb-0">Instituto Universitario de Tecnología José Maria Carreño</h3>

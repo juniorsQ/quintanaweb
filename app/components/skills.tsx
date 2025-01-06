@@ -15,9 +15,11 @@ export default function Skills(){
         
 
 // Skills
-<section className="resume-section elementBorder" id="skills">
-    <div className="resume-section-content">
-        <h2 className="mb-5">Skills</h2>
+<section className="aboutSection bgBodyAbout elementBorder" id="skills">
+
+        <div className='sectionHeader'>    <h1>Skills</h1></div>
+        <div className="aboutSectionContent">
+        
         <div className="subheading mb-3">Lenguajes de programación & Herramientas</div>
         <ul className="list-inline dev-icons">
         <li className="list-inline-item">
