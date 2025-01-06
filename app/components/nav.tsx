@@ -1,4 +1,3 @@
-import Styles from "../styles/Styles.module.css";
 import Image from "next/image";
 import profileimg from "../../public/761x761.jpg"
 export default function Navbar(){
