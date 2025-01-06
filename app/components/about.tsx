@@ -13,8 +13,9 @@ export default function About(){
             <span className="text-primary">Juniors</span>
         </h1>
         <div className="subheading mb-5">
-            Caracas Venezuela · (+58) 412-211-9581 ·
-           <a href="mailto:name@email.com">quintanajuniors@gmail.com</a>   
+            Caracas Venezuela 
+            ·(+58) 412-211-9581 
+            ·<b>quintanajuniors@gmail.com</b> 
         </div>
         <p className="lead mb-5">Desarrollador fullstack con más de 5 años de experiencia, actualmente me dedico al desarrollo de aplicaciones para Terminales de Pago (POS) en diversos lenguajes de programación C++, java, flutter, dart. Conocimiento de la mensajería ISO8583, criptografía de datos (DES, DUKPT, 3DES). También poseo conocimiento de otras tecnologías e implementación de soluciones para el sector bancario. Experiencia comprobable en certificaciones de mensajería ISO8583 y certificaciones MTIP, amplios conocimientos en los estándares de pagos EMV (Europay, Mastercard y Visa).</p>
         <div className="social-icons">
