@@ -1,6 +1,5 @@
 // myHead.tsx
 import Head from 'next/head';
-
 export default function MyHead() {
   return (
     <Head>

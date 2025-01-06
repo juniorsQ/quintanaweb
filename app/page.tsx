@@ -1,4 +1,5 @@
 import Image from "next/image";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "./components/nav";
 import About from "./components/about";
 import Experience from "./components/experience";
