@@ -10,10 +10,10 @@ export  default function Experience(){
                 <h3 className="mb-0">Desarrollador fullstack - Inteligensa S.A</h3>
                 <div className="subheading mb-3">Inteligensa</div>
                 <p>Desarrollador Fullstack y Líder de Proyecto
-
-Mi rol principal es innovar y desarrollar aplicaciones de pago para terminales POS. Tengo amplia experiencia en el desarrollo de aplicaciones de pago para terminales Android, con certificaciones MTIP aprobadas y aplicaciones actualmente en producción. También he desarrollado e implementado DLL's para impresoras de tarjetas bancarias.
-
+Mi rol principal es innovar y desarrollar aplicaciones de pago para terminales POS. Tengo amplia experiencia en el desarrollo de aplicaciones de pago para terminales Android, con certificaciones MTIP aprobadas y aplicaciones actualmente en producción.
+También he desarrollado e implementado DLL's para impresoras de tarjetas bancarias.
 Además, ofrezco soporte y asesoría a sistemas de control de gestiones, desarrollos web, aplicaciones móviles y otros proyectos consolidados en la empresa. Soy autodidacta y me apasionan los nuevos avances en programación y manejo de datos para crear soluciones que simplifiquen la vida cotidiana.
+           </p>
             </div>
             <div className="flex-shrink-0"><span className="text-primary">Enero 2017 - Presente</span></div>
         </div>
