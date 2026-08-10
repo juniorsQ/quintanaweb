@@ -1,13 +1,16 @@
 "use client";
 
 import { useCallback, useEffect, useState, useTransition } from "react";
-import { createClientBrowser } from "@/lib/supabase/client";
+import {
+  createClientBrowser,
+  getSupabasePublicConfig,
+} from "@/lib/supabase/client";
 import { fetchAdminData } from "@/lib/portfolio";
 import { withBase } from "@/lib/paths";
 import { UplinkDashboard } from "@/app/mcs-x7/uplink-dashboard";
 import type { PortfolioData } from "@/lib/types";
 
-type SessionState = "loading" | "guest" | "authed";
+type SessionState = "loading" | "guest" | "authed" | "config_error";
 
 export default function UplinkPage() {
   const [session, setSession] = useState<SessionState>("loading");
@@ -21,46 +24,61 @@ export default function UplinkPage() {
   }, []);
 
   useEffect(() => {
-    const supabase = createClientBrowser();
     let alive = true;
+    let subscription: { unsubscribe: () => void } | null = null;
 
     const boot = async () => {
-      const {
-        data: { session: s },
-      } = await supabase.auth.getSession();
-      if (!alive) return;
-      if (s?.user) {
-        setSession("authed");
-        try {
-          await reload();
-        } catch {
-          if (alive) setError("Failed to load payload");
+      try {
+        if (!getSupabasePublicConfig().ok) {
+          if (alive) {
+            setError("Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY");
+            setSession("config_error");
+          }
+          return;
         }
-      } else {
-        setSession("guest");
+
+        const supabase = createClientBrowser();
+        const {
+          data: { session: s },
+        } = await supabase.auth.getSession();
+        if (!alive) return;
+
+        if (s?.user) {
+          setSession("authed");
+          try {
+            await reload();
+          } catch {
+            if (alive) setError("Failed to load payload");
+          }
+        } else {
+          setSession("guest");
+        }
+
+        const { data: auth } = supabase.auth.onAuthStateChange((event, next) => {
+          // Avoid TOKEN_REFRESHED reloads — they remount forms and block editing.
+          if (event === "SIGNED_OUT") {
+            setSession("guest");
+            setData(null);
+            return;
+          }
+          if (event === "SIGNED_IN" && next?.user) {
+            setSession("authed");
+            reload().catch(() => setError("Failed to load payload"));
+          }
+        });
+        subscription = auth.subscription;
+      } catch (e) {
+        if (!alive) return;
+        setError(e instanceof Error ? e.message : "Uplink handshake failed");
+        setSession("config_error");
       }
     };
 
     void boot();
 
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((event, s) => {
-      // Avoid TOKEN_REFRESHED reloads — they remount forms and block editing.
-      if (event === "SIGNED_OUT") {
-        setSession("guest");
-        setData(null);
-        return;
-      }
-      if (event === "SIGNED_IN" && s?.user) {
-        setSession("authed");
-        reload().catch(() => setError("Failed to load payload"));
-      }
-    });
-
     return () => {
       alive = false;
-      subscription.unsubscribe();
+      subscription?.unsubscribe();
     };
   }, [reload]);
 
@@ -68,6 +86,27 @@ export default function UplinkPage() {
     return (
       <div className="min-h-screen bg-crt-bg flex items-center justify-center">
         <p className="font-pixel text-2xl text-phosphor">HANDSHAKE...</p>
+      </div>
+    );
+  }
+
+  if (session === "config_error") {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-crt-bg px-4">
+        <div className="panel w-full max-w-md overflow-hidden">
+          <div className="panel-header">
+            <span>CHANNEL · MCS-X7</span>
+            <span className="text-amber-signal">FAULT</span>
+          </div>
+          <div className="space-y-4 p-6">
+            <p className="font-mono text-sm text-amber-signal">
+              SIGNAL LOSS :: {error ?? "config fault"}
+            </p>
+            <a href={withBase("/")} className="nav-link inline-block">
+              ← ABORT
+            </a>
+          </div>
+        </div>
       </div>
     );
   }
