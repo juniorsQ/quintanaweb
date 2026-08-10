@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useTransition } from "react";
+import { useCallback, useEffect, useState, useTransition } from "react";
 import { createClientBrowser } from "@/lib/supabase/client";
 import { fetchAdminData } from "@/lib/portfolio";
 import { withBase } from "@/lib/paths";
@@ -15,46 +15,66 @@ export default function UplinkPage() {
   const [error, setError] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
 
-  const reload = async () => {
+  const reload = useCallback(async () => {
     const next = await fetchAdminData();
     setData(next);
-  };
+  }, []);
 
   useEffect(() => {
     const supabase = createClientBrowser();
-    supabase.auth.getSession().then(({ data: { session: s } }) => {
+    let alive = true;
+
+    const boot = async () => {
+      const {
+        data: { session: s },
+      } = await supabase.auth.getSession();
+      if (!alive) return;
       if (s?.user) {
         setSession("authed");
-        reload().catch(() => setError("Failed to load payload"));
+        try {
+          await reload();
+        } catch {
+          if (alive) setError("Failed to load payload");
+        }
       } else {
         setSession("guest");
       }
-    });
+    };
+
+    void boot();
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, s) => {
-      setSession(s?.user ? "authed" : "guest");
-      if (s?.user) reload().catch(() => setError("Failed to load payload"));
+    } = supabase.auth.onAuthStateChange((event, s) => {
+      // Avoid TOKEN_REFRESHED reloads — they remount forms and block editing.
+      if (event === "SIGNED_OUT") {
+        setSession("guest");
+        setData(null);
+        return;
+      }
+      if (event === "SIGNED_IN" && s?.user) {
+        setSession("authed");
+        reload().catch(() => setError("Failed to load payload"));
+      }
     });
 
-    return () => subscription.unsubscribe();
-  }, []);
+    return () => {
+      alive = false;
+      subscription.unsubscribe();
+    };
+  }, [reload]);
 
   if (session === "loading") {
     return (
-      <div className="crt-shell flex min-h-screen items-center justify-center">
-        <p className="font-pixel text-2xl text-phosphor">
-          HANDSHAKE
-          <span className="ml-1 inline-block h-5 w-2 animate-blink bg-phosphor align-middle" />
-        </p>
+      <div className="min-h-screen bg-crt-bg flex items-center justify-center">
+        <p className="font-pixel text-2xl text-phosphor">HANDSHAKE...</p>
       </div>
     );
   }
 
   if (session === "guest") {
     return (
-      <div className="crt-shell flex min-h-screen items-center justify-center px-4">
+      <div className="flex min-h-screen items-center justify-center bg-crt-bg px-4">
         <div className="panel w-full max-w-md overflow-hidden">
           <div className="panel-header">
             <span>CHANNEL · MCS-X7</span>
@@ -131,7 +151,7 @@ export default function UplinkPage() {
 
   if (!data) {
     return (
-      <div className="crt-shell flex min-h-screen items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-crt-bg">
         <p className="font-mono text-sm text-phosphor-dim">Loading payload...</p>
       </div>
     );

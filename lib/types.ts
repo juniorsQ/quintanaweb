@@ -62,6 +62,17 @@ export type Certification = {
   is_visible: boolean;
 };
 
+export type Project = {
+  id: string;
+  title: string;
+  summary: string;
+  image_url: string;
+  technologies: string;
+  project_url: string;
+  sort_order: number;
+  is_visible: boolean;
+};
+
 export type PortfolioData = {
   profile: SiteProfile | null;
   socialLinks: SocialLink[];
@@ -70,4 +81,5 @@ export type PortfolioData = {
   skills: Skill[];
   workflowItems: WorkflowItem[];
   certifications: Certification[];
+  projects: Project[];
 };

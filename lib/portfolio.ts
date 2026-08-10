@@ -12,6 +12,7 @@ export async function fetchPortfolioData(): Promise<PortfolioData> {
     skillsRes,
     workflowRes,
     certsRes,
+    projectsRes,
   ] = await Promise.all([
     supabase.from("site_profile").select("*").limit(1).maybeSingle(),
     supabase
@@ -44,6 +45,11 @@ export async function fetchPortfolioData(): Promise<PortfolioData> {
       .select("*")
       .eq("is_visible", true)
       .order("sort_order"),
+    supabase
+      .from("projects")
+      .select("*")
+      .eq("is_visible", true)
+      .order("sort_order"),
   ]);
 
   return {
@@ -54,11 +60,13 @@ export async function fetchPortfolioData(): Promise<PortfolioData> {
     skills: skillsRes.data ?? [],
     workflowItems: workflowRes.data ?? [],
     certifications: certsRes.data ?? [],
+    projects: projectsRes.data ?? [],
   };
 }
 
 export async function fetchAdminData() {
   const supabase = createClientBrowser();
+  await supabase.auth.getSession();
 
   const [
     profileRes,
@@ -68,6 +76,7 @@ export async function fetchAdminData() {
     skillsRes,
     workflowRes,
     certsRes,
+    projectsRes,
   ] = await Promise.all([
     supabase.from("site_profile").select("*").limit(1).maybeSingle(),
     supabase.from("social_links").select("*").order("sort_order"),
@@ -76,7 +85,22 @@ export async function fetchAdminData() {
     supabase.from("skills").select("*").order("sort_order"),
     supabase.from("workflow_items").select("*").order("sort_order"),
     supabase.from("certifications").select("*").order("sort_order"),
+    supabase.from("projects").select("*").order("sort_order"),
   ]);
+
+  const firstError =
+    profileRes.error ||
+    socialRes.error ||
+    experienceRes.error ||
+    educationRes.error ||
+    skillsRes.error ||
+    workflowRes.error ||
+    certsRes.error ||
+    projectsRes.error;
+
+  if (firstError) {
+    throw new Error(firstError.message);
+  }
 
   return {
     profile: profileRes.data,
@@ -86,5 +110,6 @@ export async function fetchAdminData() {
     skills: skillsRes.data ?? [],
     workflowItems: workflowRes.data ?? [],
     certifications: certsRes.data ?? [],
+    projects: projectsRes.data ?? [],
   };
 }

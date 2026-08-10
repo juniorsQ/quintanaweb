@@ -6,6 +6,7 @@ import { UPLINK_PATH, withBase } from "@/lib/paths";
 
 const NAV = [
   { href: "#about", label: "ACERCA" },
+  { href: "#projects", label: "PROYECTOS" },
   { href: "#experience", label: "EXP" },
   { href: "#skills", label: "SKILLS" },
   { href: "#education", label: "EDU" },
@@ -45,7 +46,7 @@ export function SiteShell({ profile, socialLinks, children }: Props) {
       <div className="pointer-events-none fixed inset-x-0 top-0 z-[60] h-px animate-boot-line bg-gradient-to-r from-transparent via-phosphor to-transparent" />
 
       <header className="sticky top-0 z-40 border-b border-crt-border bg-crt-bg/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+        <div className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-4 px-4 py-3 md:px-8 lg:px-12">
           <a href="#about" className="group flex items-center gap-3">
             <span className="relative flex h-8 w-8 items-center justify-center border border-phosphor/40 bg-phosphor-mute">
               <span className="absolute inset-1 border border-phosphor/20" />
@@ -122,13 +123,13 @@ export function SiteShell({ profile, socialLinks, children }: Props) {
         )}
       </header>
 
-      <main className="relative mx-auto max-w-6xl px-4 pb-20 pt-6 md:px-6 md:pt-10">
+      <main className="relative mx-auto w-full max-w-[1600px] px-4 pb-20 pt-6 md:px-8 md:pt-10 lg:px-12">
         <div className="pointer-events-none absolute inset-0 -z-10 grid-overlay opacity-40" />
         {children}
       </main>
 
       <footer className="border-t border-crt-border bg-crt-panel/80">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 font-mono text-[11px] text-phosphor-dim md:flex-row md:items-center md:justify-between md:px-6">
+        <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-3 px-4 py-6 font-mono text-[11px] text-phosphor-dim md:flex-row md:items-center md:justify-between md:px-8 lg:px-12">
           <p>
             © {new Date().getFullYear()} QUINTANADEV · TELEMETRY ONLINE
             <span className="ml-2 inline-block h-2 w-2 animate-pulse bg-phosphor align-middle shadow-phosphor" />

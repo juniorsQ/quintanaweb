@@ -9,6 +9,7 @@ import { ExperienceSection } from "@/app/components/experience-section";
 import { SkillsSection } from "@/app/components/skills-section";
 import { EducationSection } from "@/app/components/education-section";
 import { CertificationsSection } from "@/app/components/certifications-section";
+import { ProjectsSection } from "@/app/components/projects-section";
 import { PixelSpaceScene } from "@/app/components/pixel-space-scene";
 
 const empty: PortfolioData = {
@@ -19,6 +20,7 @@ const empty: PortfolioData = {
   skills: [],
   workflowItems: [],
   certifications: [],
+  projects: [],
 };
 
 export default function Home() {
@@ -60,6 +62,7 @@ export default function Home() {
         )}
         <div className="relative z-10">
           <Hero profile={data.profile} socialLinks={data.socialLinks} />
+          <ProjectsSection items={data.projects} />
           <ExperienceSection items={data.experiences} />
           <SkillsSection skills={data.skills} workflow={data.workflowItems} />
           <EducationSection items={data.education} />
