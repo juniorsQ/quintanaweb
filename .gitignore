@@ -11,7 +11,8 @@
 
 # next.js
 /.next/
-/out/
+# Keep committing `out/` for GitHub Pages branch deploy compatibility.
+# Prefer GitHub Actions deploy (workflow uploads ./out as the site root).
 
 # production
 /build
