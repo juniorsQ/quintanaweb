@@ -137,10 +137,19 @@ export default function UplinkPage() {
                 const password = String(fd.get("password") ?? "");
                 setError(null);
                 startTransition(async () => {
-                  const supabase = createClientBrowser();
-                  const { error: authError } =
-                    await supabase.auth.signInWithPassword({ email, password });
-                  if (authError) setError(authError.message);
+                  try {
+                    const supabase = createClientBrowser();
+                    const { error: authError } =
+                      await supabase.auth.signInWithPassword({
+                        email,
+                        password,
+                      });
+                    if (authError) setError(authError.message);
+                  } catch (err) {
+                    setError(
+                      err instanceof Error ? err.message : "Login failed"
+                    );
+                  }
                 });
               }}
             >
