@@ -1,15 +1,19 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
 import type { Certification } from "@/lib/types";
 import { SectionFrame } from "@/app/components/section-frame";
 
 type Props = { items: Certification[] };
 
 export function CertificationsSection({ items }: Props) {
+  const { t } = useTranslation();
   return (
     <SectionFrame
       id="awards"
       code="MOD-05"
-      title="CURSOS & CERTIFICACIONES"
-      subtitle="Clearance badges · completed missions"
+      title={t("sections.certs")}
+      subtitle={t("sections.certsSub")}
     >
       <ul className="grid gap-3 md:grid-cols-2">
         {items.map((item, index) => (

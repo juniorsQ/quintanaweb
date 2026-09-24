@@ -73,6 +73,32 @@ export type Project = {
   is_visible: boolean;
 };
 
+export type Service = {
+  id: string;
+  title: string;
+  description: string;
+  sort_order: number;
+  is_visible: boolean;
+};
+
+export type Faq = {
+  id: string;
+  question: string;
+  answer: string;
+  sort_order: number;
+  is_visible: boolean;
+};
+
+export type ContactMessage = {
+  id: string;
+  name: string;
+  email: string;
+  message: string;
+  locale: string;
+  is_read: boolean;
+  created_at: string;
+};
+
 export type PortfolioData = {
   profile: SiteProfile | null;
   socialLinks: SocialLink[];
@@ -82,4 +108,7 @@ export type PortfolioData = {
   workflowItems: WorkflowItem[];
   certifications: Certification[];
   projects: Project[];
+  services: Service[];
+  faqs: Faq[];
+  contactMessages?: ContactMessage[];
 };

@@ -3,9 +3,12 @@
 import { useEffect, useState } from "react";
 import type {
   Certification,
+  ContactMessage,
   Education,
   Experience,
+  Faq,
   Project,
+  Service,
   SiteProfile,
   Skill,
   SocialLink,
@@ -23,10 +26,16 @@ type AdminData = {
   workflowItems: WorkflowItem[];
   certifications: Certification[];
   projects: Project[];
+  services: Service[];
+  faqs: Faq[];
+  contactMessages?: ContactMessage[];
 };
 
 const TABS = [
   "profile",
+  "inbox",
+  "faq",
+  "services",
   "projects",
   "experience",
   "education",
@@ -63,6 +72,9 @@ export function UplinkDashboard({ data, onRefresh, onLogout }: Props) {
   };
 
   const projects = data.projects ?? [];
+  const faqs = data.faqs ?? [];
+  const services = data.services ?? [];
+  const contactMessages = data.contactMessages ?? [];
   const experiences = data.experiences ?? [];
   const education = data.education ?? [];
   const skills = data.skills ?? [];
@@ -142,6 +154,53 @@ export function UplinkDashboard({ data, onRefresh, onLogout }: Props) {
                 setError(e instanceof Error ? e.message : "Error al guardar");
               }
             }}
+          />
+        )}
+        {tab === "inbox" && (
+          <ContactInbox
+            items={contactMessages}
+            onDone={afterMutate}
+            onError={setError}
+          />
+        )}
+        {tab === "faq" && (
+          <CrudList
+            title="Preguntas frecuentes"
+            items={faqs}
+            blank={{
+              question: "",
+              answer: "",
+              sort_order: faqs.length + 1,
+              is_visible: true,
+            }}
+            fields={[
+              ["question", "Pregunta"],
+              ["sort_order", "Orden", "number"],
+              ["answer", "Respuesta", "textarea"],
+            ]}
+            table="faqs"
+            onDone={afterMutate}
+            onError={setError}
+          />
+        )}
+        {tab === "services" && (
+          <CrudList
+            title="Servicios"
+            items={services}
+            blank={{
+              title: "",
+              description: "",
+              sort_order: services.length + 1,
+              is_visible: true,
+            }}
+            fields={[
+              ["title", "Título"],
+              ["sort_order", "Orden", "number"],
+              ["description", "Descripción", "textarea"],
+            ]}
+            table="services"
+            onDone={afterMutate}
+            onError={setError}
           />
         )}
         {tab === "projects" && (
@@ -641,6 +700,97 @@ function CrudList<T extends { id?: string; is_visible?: boolean }>({
                 type="button"
                 className="btn-amber !py-1 !text-[10px]"
                 onClick={() => item.id && remove(item.id)}
+              >
+                DEL
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function ContactInbox({
+  items,
+  onDone,
+  onError,
+}: {
+  items: ContactMessage[];
+  onDone: () => Promise<void>;
+  onError?: (message: string | null) => void;
+}) {
+  const markRead = async (id: string, is_read: boolean) => {
+    try {
+      const supabase = createClientBrowser();
+      const { error } = await supabase
+        .from("contact_messages")
+        .update({ is_read })
+        .eq("id", id);
+      if (error) throw error;
+      await onDone();
+    } catch (e) {
+      onError?.(e instanceof Error ? e.message : "Error al actualizar");
+    }
+  };
+
+  const remove = async (id: string) => {
+    try {
+      const supabase = createClientBrowser();
+      const { error } = await supabase
+        .from("contact_messages")
+        .delete()
+        .eq("id", id);
+      if (error) throw error;
+      await onDone();
+    } catch (e) {
+      onError?.(e instanceof Error ? e.message : "Error al borrar");
+    }
+  };
+
+  return (
+    <div className="space-y-4">
+      <h2 className="font-display text-lg text-phosphor">Inbox contacto</h2>
+      <ul className="space-y-3">
+        {items.length === 0 && (
+          <li className="font-mono text-sm text-phosphor-dim">
+            {"// sin mensajes"}
+          </li>
+        )}
+        {items.map((item) => (
+          <li key={item.id} className="panel space-y-2 px-4 py-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="font-mono text-sm text-phosphor">
+                {item.name} · {item.email}
+                {!item.is_read && (
+                  <span className="ml-2 text-amber-signal">[NEW]</span>
+                )}
+              </p>
+              <span className="font-mono text-[10px] text-phosphor-dim">
+                {new Date(item.created_at).toLocaleString()} · {item.locale}
+              </span>
+            </div>
+            <p className="font-mono text-sm leading-6 text-[#9ad4b0]">
+              {item.message}
+            </p>
+            <div className="flex gap-2">
+              <button
+                type="button"
+                className="btn-crt !py-1 !text-[10px]"
+                onClick={() => markRead(item.id, !item.is_read)}
+              >
+                {item.is_read ? "UNREAD" : "READ"}
+              </button>
+              <a
+                href={`mailto:${item.email}`}
+                className="btn-crt !py-1 !text-[10px]"
+              >
+                REPLY
+              </a>
+              <button
+                type="button"
+                className="btn-amber !py-1 !text-[10px]"
+                onClick={() => remove(item.id)}
               >
                 DEL
               </button>

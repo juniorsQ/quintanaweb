@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /mcs-x7/
+Disallow: /mcs-x7
+
+Sitemap: https://quintanadev.us/sitemap.xml
+Host: https://quintanadev.us

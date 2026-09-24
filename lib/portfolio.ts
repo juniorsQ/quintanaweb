@@ -13,6 +13,8 @@ export async function fetchPortfolioData(): Promise<PortfolioData> {
     workflowRes,
     certsRes,
     projectsRes,
+    servicesRes,
+    faqsRes,
   ] = await Promise.all([
     supabase.from("site_profile").select("*").limit(1).maybeSingle(),
     supabase
@@ -50,6 +52,16 @@ export async function fetchPortfolioData(): Promise<PortfolioData> {
       .select("*")
       .eq("is_visible", true)
       .order("sort_order"),
+    supabase
+      .from("services")
+      .select("*")
+      .eq("is_visible", true)
+      .order("sort_order"),
+    supabase
+      .from("faqs")
+      .select("*")
+      .eq("is_visible", true)
+      .order("sort_order"),
   ]);
 
   return {
@@ -61,6 +73,8 @@ export async function fetchPortfolioData(): Promise<PortfolioData> {
     workflowItems: workflowRes.data ?? [],
     certifications: certsRes.data ?? [],
     projects: projectsRes.data ?? [],
+    services: servicesRes.data ?? [],
+    faqs: faqsRes.data ?? [],
   };
 }
 
@@ -77,6 +91,9 @@ export async function fetchAdminData() {
     workflowRes,
     certsRes,
     projectsRes,
+    servicesRes,
+    faqsRes,
+    contactsRes,
   ] = await Promise.all([
     supabase.from("site_profile").select("*").limit(1).maybeSingle(),
     supabase.from("social_links").select("*").order("sort_order"),
@@ -86,6 +103,12 @@ export async function fetchAdminData() {
     supabase.from("workflow_items").select("*").order("sort_order"),
     supabase.from("certifications").select("*").order("sort_order"),
     supabase.from("projects").select("*").order("sort_order"),
+    supabase.from("services").select("*").order("sort_order"),
+    supabase.from("faqs").select("*").order("sort_order"),
+    supabase
+      .from("contact_messages")
+      .select("*")
+      .order("created_at", { ascending: false }),
   ]);
 
   const firstError =
@@ -96,7 +119,10 @@ export async function fetchAdminData() {
     skillsRes.error ||
     workflowRes.error ||
     certsRes.error ||
-    projectsRes.error;
+    projectsRes.error ||
+    servicesRes.error ||
+    faqsRes.error ||
+    contactsRes.error;
 
   if (firstError) {
     throw new Error(firstError.message);
@@ -111,5 +137,8 @@ export async function fetchAdminData() {
     workflowItems: workflowRes.data ?? [],
     certifications: certsRes.data ?? [],
     projects: projectsRes.data ?? [],
+    services: servicesRes.data ?? [],
+    faqs: faqsRes.data ?? [],
+    contactMessages: contactsRes.data ?? [],
   };
 }

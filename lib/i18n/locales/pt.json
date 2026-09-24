@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "services": "Serviços",
+    "faq": "FAQ",
+    "projects": "Projetos",
+    "experience": "Exp",
+    "skills": "Skills",
+    "contact": "Contato"
+  },
+  "hero": {
+    "station": "STATION ID · QDV-01 · UPLINK ACTIVE",
+    "viewServices": "Ver serviços",
+    "contact": "Contato",
+    "loc": "LOC",
+    "comms": "COMMS"
+  },
+  "content": {
+    "tagline": "FULLSTACK // MOBILE SENIOR // PRODUCT BUILDER",
+    "bio": "Desenvolvedor fullstack e mobile sênior com mais de 8 anos de experiência. Venho do mundo de sistemas de alta exigência (pagamentos e integrações críticas), e hoje construo produtos digitais completos: apps Flutter, webs modernas, APIs, backoffice e deploy em produção. Stack atual: Flutter/Dart, TypeScript, Next.js/Vue, Supabase, Firebase, mapas, câmera, auth, notificações e IA aplicada. Produtos próprios: TerraLiam e App MiDoc.",
+    "location": "Caracas, Venezuela"
+  },
+  "services": {
+    "sectionTitle": "Serviços",
+    "sectionSubtitle": "Fullstack · mobile · produto · mission control",
+    "pageKicker": "Serviços · QuintanaDev",
+    "pageTitle": "Desenvolvimento fullstack e mobile sênior",
+    "mobileTitle": "Apps móveis sênior (Flutter)",
+    "mobileText": "Apps iOS/Android com Flutter: mapas, câmera, bússola, autenticação, notificações, mídia e publicação nas lojas (Play / App Store). Arquitetura limpa, performance e UX pronta para produção.",
+    "fullstackTitle": "Fullstack web e APIs",
+    "fullstackText": "Landings, painéis e backends com TypeScript, Next.js/Vue, Supabase/Firebase, auth, storage, RLS e edge functions. Do MVP a um produto operável com métricas e backoffice.",
+    "productTitle": "Produto de ponta a ponta",
+    "productText": "Do conceito ao release: discovery, UI, app + web, backend, privacidade/policies, CI/CD e iteração. Ideal se você precisa de um sênior que fecha o ciclo completo."
+  },
+  "faq": {
+    "sectionTitle": "Perguntas frequentes",
+    "sectionSubtitle": "Search · index · uplink",
+    "q1": "O que é a QuintanaDev?",
+    "a1": "A QuintanaDev é o estúdio de software de Juniors Quintana em Caracas, Venezuela. Oferece desenvolvimento fullstack e mobile sênior: apps Flutter, webs, APIs e produtos digitais de ponta a ponta.",
+    "q2": "Que tipo de produtos você constrói?",
+    "a2": "Apps e plataformas reais em produção ou lançamento. Por exemplo TerraLiam (jogo familiar com mapas, câmera e IA) e App MiDoc (gestão clínica móvel para pacientes, médicos e administradores). Também landings, painéis Ops e backends com Supabase/Firebase.",
+    "q3": "Como contactar a QuintanaDev?",
+    "a3": "Use o formulário de contato nesta página. A equipe opera no horário UTC-4 (Caracas)."
+  },
+  "sections": {
+    "projects": "Projetos",
+    "projectsSub": "Mission payloads · shipped work",
+    "projectsEmpty": "// ainda não há projetos no uplink",
+    "experience": "Experiência profissional",
+    "experienceSub": "Flight log · employment telemetry",
+    "experienceEmpty": "// sem registros — atualize no backoffice",
+    "skills": "Skills",
+    "skillsSub": "Payload · languages & tooling",
+    "languages": "Linguagens e ferramentas",
+    "workflow": "Fluxo de trabalho",
+    "education": "Educação",
+    "educationSub": "Academy uplink · training archive",
+    "certs": "Cursos e certificações",
+    "certsSub": "Clearance badges · completed missions"
+  },
+  "workflow": {
+    "responsive": "Design responsivo",
+    "testing": "Testes e depuração entre navegadores",
+    "teams": "Equipas multifuncionais",
+    "agile": "Desenvolvimento ágil e Scrum"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Uplink · mensagem cifrada",
+    "intro": "Escreva por este formulário. Não publico o e-mail no site.",
+    "name": "Nome",
+    "email": "O seu e-mail",
+    "message": "Mensagem",
+    "send": "Enviar",
+    "sending": "A enviar...",
+    "ok": "Mensagem recebida. Respondo em breve.",
+    "error": "Não foi possível enviar. Tente novamente.",
+    "required": "Preencha todos os campos."
+  },
+  "lang": {
+    "es": "Español",
+    "en": "English",
+    "pt": "Português",
+    "label": "Idioma"
+  },
+  "footer": "TELEMETRY ONLINE",
+  "loading": "ESTABLISHING UPLINK",
+  "error": "SIGNAL LOSS"
+}

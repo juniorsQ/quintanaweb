@@ -1,5 +1,5 @@
-/** Must match next.config.mjs basePath (GitHub Pages project site). */
-export const BASE_PATH = "/quintanaweb";
+/** Production custom domain is served at the origin root. */
+export const BASE_PATH = "";
 
 export function withBase(path: string) {
   const normalized = path.startsWith("/") ? path : `/${path}`;

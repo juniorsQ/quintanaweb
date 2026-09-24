@@ -1,5 +1,9 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
 import type { Skill, WorkflowItem } from "@/lib/types";
 import { SectionFrame } from "@/app/components/section-frame";
+import { localizeWorkflow } from "@/lib/i18n/cms";
 
 type Props = {
   skills: Skill[];
@@ -7,14 +11,15 @@ type Props = {
 };
 
 export function SkillsSection({ skills, workflow }: Props) {
+  const { t } = useTranslation();
   return (
     <SectionFrame
       id="skills"
       code="MOD-03"
-      title="SKILLS"
-      subtitle="Payload · languages & tooling"
+      title={t("sections.skills")}
+      subtitle={t("sections.skillsSub")}
     >
-      <p className="signal-label mb-4">LENGUAJES & HERRAMIENTAS</p>
+      <p className="signal-label mb-4">{t("sections.languages")}</p>
       <ul className="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
         {skills.map((skill) => (
           <li
@@ -34,7 +39,7 @@ export function SkillsSection({ skills, workflow }: Props) {
         ))}
       </ul>
 
-      <p className="signal-label mb-4">FLUJO DE TRABAJO</p>
+      <p className="signal-label mb-4">{t("sections.workflow")}</p>
       <ul className="space-y-2">
         {workflow.map((item) => (
           <li
@@ -42,7 +47,7 @@ export function SkillsSection({ skills, workflow }: Props) {
             className="flex items-start gap-3 font-mono text-sm text-[#9ad4b0]"
           >
             <span className="mt-0.5 text-amber-signal">▶</span>
-            {item.label}
+            {localizeWorkflow(item.label, t)}
           </li>
         ))}
       </ul>

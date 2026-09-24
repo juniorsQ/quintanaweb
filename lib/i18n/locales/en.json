@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "faq": "FAQ",
+    "projects": "Projects",
+    "experience": "Exp",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "station": "STATION ID · QDV-01 · UPLINK ACTIVE",
+    "viewServices": "View services",
+    "contact": "Contact",
+    "loc": "LOC",
+    "comms": "COMMS"
+  },
+  "content": {
+    "tagline": "FULLSTACK // MOBILE SENIOR // PRODUCT BUILDER",
+    "bio": "Senior fullstack and mobile developer with 8+ years of experience. I come from high-reliability systems (payments and critical integrations), and today I build complete digital products: Flutter apps, modern webs, APIs, backoffice and production deploys. Current stack: Flutter/Dart, TypeScript, Next.js/Vue, Supabase, Firebase, maps, camera, auth, notifications and applied AI. Own products: TerraLiam and App MiDoc.",
+    "location": "Caracas, Venezuela"
+  },
+  "services": {
+    "sectionTitle": "Services",
+    "sectionSubtitle": "Fullstack · mobile · product · mission control",
+    "pageKicker": "Services · QuintanaDev",
+    "pageTitle": "Senior fullstack and mobile development",
+    "mobileTitle": "Senior mobile apps (Flutter)",
+    "mobileText": "iOS/Android apps with Flutter: maps, camera, compass, auth, notifications, media and store releases (Play / App Store). Clean architecture, performance and production-ready UX.",
+    "fullstackTitle": "Fullstack web and APIs",
+    "fullstackText": "Landings, dashboards and backends with TypeScript, Next.js/Vue, Supabase/Firebase, auth, storage, RLS and edge functions. From MVP to an operable product with metrics and backoffice.",
+    "productTitle": "End-to-end product",
+    "productText": "From concept to release: discovery, UI, app + web, backend, privacy/policies, CI/CD and iteration. Ideal when you need a senior who closes the full loop."
+  },
+  "faq": {
+    "sectionTitle": "Frequently asked questions",
+    "sectionSubtitle": "Search · index · uplink",
+    "q1": "What is QuintanaDev?",
+    "a1": "QuintanaDev is Juniors Quintana's software studio in Caracas, Venezuela. Senior fullstack and mobile development: Flutter apps, webs, APIs and end-to-end digital products.",
+    "q2": "What kind of products do you build?",
+    "a2": "Real apps and platforms in production or launch. For example TerraLiam (family outdoor game with maps, camera and AI) and App MiDoc (mobile clinical management for patients, doctors and admins). Also landings, Ops dashboards and Supabase/Firebase backends.",
+    "q3": "How can I contact QuintanaDev?",
+    "a3": "Use the contact form on this page. The team operates on UTC-4 (Caracas)."
+  },
+  "sections": {
+    "projects": "Projects",
+    "projectsSub": "Mission payloads · shipped work",
+    "projectsEmpty": "// no projects on uplink yet",
+    "experience": "Work experience",
+    "experienceSub": "Flight log · employment telemetry",
+    "experienceEmpty": "// no flight logs found — update from backoffice",
+    "skills": "Skills",
+    "skillsSub": "Payload · languages & tooling",
+    "languages": "Languages and tools",
+    "workflow": "Workflow",
+    "education": "Education",
+    "educationSub": "Academy uplink · training archive",
+    "certs": "Courses and certifications",
+    "certsSub": "Clearance badges · completed missions"
+  },
+  "workflow": {
+    "responsive": "Responsive design",
+    "testing": "Cross-browser testing and debugging",
+    "teams": "Cross-functional teams",
+    "agile": "Agile development and Scrum"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Uplink · encrypted message",
+    "intro": "Write through this form. I do not publish my email on the site.",
+    "name": "Name",
+    "email": "Your email",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending...",
+    "ok": "Message received. I will get back to you soon.",
+    "error": "Could not send. Please try again.",
+    "required": "Please fill in all fields."
+  },
+  "lang": {
+    "es": "Español",
+    "en": "English",
+    "pt": "Português",
+    "label": "Language"
+  },
+  "footer": "TELEMETRY ONLINE",
+  "loading": "ESTABLISHING UPLINK",
+  "error": "SIGNAL LOSS"
+}

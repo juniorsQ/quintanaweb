@@ -1,15 +1,19 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
 import type { Education } from "@/lib/types";
 import { SectionFrame } from "@/app/components/section-frame";
 
 type Props = { items: Education[] };
 
 export function EducationSection({ items }: Props) {
+  const { t } = useTranslation();
   return (
     <SectionFrame
       id="education"
       code="MOD-04"
-      title="EDUCACIÓN"
-      subtitle="Academy uplink · training archive"
+      title={t("sections.education")}
+      subtitle={t("sections.educationSub")}
     >
       <div className="space-y-4">
         {items.map((item) => (

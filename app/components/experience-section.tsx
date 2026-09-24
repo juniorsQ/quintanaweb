@@ -1,15 +1,19 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
 import type { Experience } from "@/lib/types";
 import { SectionFrame } from "@/app/components/section-frame";
 
 type Props = { items: Experience[] };
 
 export function ExperienceSection({ items }: Props) {
+  const { t } = useTranslation();
   return (
     <SectionFrame
       id="experience"
       code="MOD-02"
-      title="EXPERIENCIA LABORAL"
-      subtitle="Flight log · employment telemetry"
+      title={t("sections.experience")}
+      subtitle={t("sections.experienceSub")}
     >
       <div className="space-y-6">
         {items.map((item, index) => (
@@ -38,16 +42,12 @@ export function ExperienceSection({ items }: Props) {
             </p>
           </article>
         ))}
-        {items.length === 0 && <EmptyState />}
+        {items.length === 0 && (
+          <p className="font-mono text-sm text-phosphor-dim">
+            {t("sections.experienceEmpty")}
+          </p>
+        )}
       </div>
     </SectionFrame>
-  );
-}
-
-function EmptyState() {
-  return (
-    <p className="font-mono text-sm text-phosphor-dim">
-      {"// no flight logs found — update from backoffice"}
-    </p>
   );
 }

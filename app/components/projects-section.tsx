@@ -1,30 +1,40 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
 import type { Project } from "@/lib/types";
+import { DEFAULT_PROJECTS } from "@/lib/seo";
 import { SectionFrame } from "@/app/components/section-frame";
 
 type Props = { items: Project[] };
 
 export function ProjectsSection({ items }: Props) {
+  const { t } = useTranslation();
+  const projects = items.length > 0 ? items : [...DEFAULT_PROJECTS];
+
   return (
     <SectionFrame
       id="projects"
       code="MOD-06"
-      title="PROYECTOS"
-      subtitle="Mission payloads · shipped work"
+      title={t("sections.projects")}
+      subtitle={t("sections.projectsSub")}
     >
-      {items.length === 0 ? (
+      {projects.length === 0 ? (
         <p className="font-mono text-sm text-phosphor-dim">
-          {"// no projects on uplink yet"}
+          {t("sections.projectsEmpty")}
         </p>
       ) : (
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((project) => {
+          {projects.map((project) => {
             const techs = project.technologies
               .split(",")
-              .map((t) => t.trim())
+              .map((tech) => tech.trim())
               .filter(Boolean);
 
             return (
-              <li key={project.id} className="panel overflow-hidden transition hover:border-phosphor/45">
+              <li
+                key={project.id}
+                className="panel overflow-hidden transition hover:border-phosphor/45"
+              >
                 <div className="relative aspect-[16/10] overflow-hidden border-b border-crt-border bg-crt-raised">
                   {project.image_url ? (
                     // eslint-disable-next-line @next/next/no-img-element
