@@ -28,17 +28,17 @@ export function isPaymentOfferCopy(...parts: Array<string | null | undefined>) {
   return parts.some((part) => Boolean(part && PAYMENT_OFFER_RE.test(part)));
 }
 
-/** Public bio never comes from CMS. */
-export function localizeBio(_bio: string | null | undefined, t: TFn) {
-  return t("content.bio");
+export function localizeBio(bio: string | null | undefined, t: TFn) {
+  const value = bio?.trim();
+  return value ? value : t("content.bio");
 }
 
-/** Public tagline never comes from CMS. */
 export function localizeTagline(
-  _tagline: string | null | undefined,
+  tagline: string | null | undefined,
   t: TFn
 ) {
-  return t("content.tagline");
+  const value = tagline?.trim();
+  return value ? value : t("content.tagline");
 }
 
 export function localizeService(

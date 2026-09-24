@@ -16,29 +16,29 @@
     "comms": "COMMS"
   },
   "content": {
-    "tagline": "MOBILE SENIOR // APPS COMPLETOS // WEB + CMS",
-    "bio": "Desenvolvedor mobile sênior. Projeto e entrego aplicativos iOS/Android 100% funcionais com o site oficial, CMS e backoffice. Produtos próprios: TerraLiam e App MiDoc. Stack: Flutter/Dart, TypeScript, Next.js/Vue, Supabase, Firebase, mapas, câmera, auth, notificações e IA aplicada.",
+    "tagline": "SOFTWARE SÊNIOR // SISTEMAS DE ALTA EXIGÊNCIA // PRODUTOS EM PRODUÇÃO",
+    "bio": "Mais de oito anos construindo software em ambientes de alta exigência. Minha experiência plena está no mundo dos pagamentos: aplicativos para terminais POS, mensageria financeira ISO8583, criptografia e produtos Android de missão crítica. Essa mesma disciplina — arquitetura, segurança, rastreabilidade e saída para produção — aplico como especialista em qualquer tipo de aplicação. Provam isso produtos próprios em produção: TerraLiam, um jogo familiar ao ar livre com mapas, câmera e IA, site oficial e painel de operação; e App MiDoc, uma plataforma clínica móvel para pacientes, médicos e administradores. Flutter, Dart, TypeScript, Next.js, Vue, Supabase e Firebase.",
     "location": "Caracas, Venezuela"
   },
   "services": {
     "sectionTitle": "Serviços",
-    "sectionSubtitle": "Apps móveis · web · CMS · backoffice",
+    "sectionSubtitle": "Apps · web · CMS · produtos em produção",
     "pageKicker": "Serviços · QuintanaDev",
-    "pageTitle": "Apps móveis 100% funcionais, com web e CMS",
-    "mobileTitle": "Apps móveis 100% funcionais",
-    "mobileText": "Apps iOS/Android com Flutter: mapas, câmera, autenticação, notificações, mídia e publicação na Play Store / App Store. Arquitetura limpa e UX pronta para produção.",
-    "fullstackTitle": "Web oficial + CMS / backoffice",
-    "fullstackText": "O site do produto e o painel para operá-lo: usuários, conteúdos, métricas, papéis e publicação. Next.js/Vue, Supabase/Firebase, auth e storage.",
-    "productTitle": "Sistema completo de ponta a ponta",
-    "productText": "App + web + backend + CMS. Do conceito ao release: discovery, UI, APIs, privacidade, CI/CD e lojas. Um sênior que fecha o ciclo."
+    "pageTitle": "Software sênior para produtos reais",
+    "mobileTitle": "Aplicativos móveis em produção",
+    "mobileText": "Apps iOS e Android com Flutter: mapas, câmera, autenticação, notificações, mídia e publicação nas lojas. O mesmo rigor de um sistema de missão crítica, aplicado ao seu produto.",
+    "fullstackTitle": "Web, CMS e backoffice",
+    "fullstackText": "Site oficial e o painel para operar o produto: usuários, conteúdos, papéis, métricas e publicação. Next.js ou Vue, com Supabase ou Firebase.",
+    "productTitle": "Produto digital completo",
+    "productText": "App + web + backend. Do conceito ao release: arquitetura, UI, APIs, privacidade, CI/CD e operação real. TerraLiam e App MiDoc são o padrão que aplico."
   },
   "faq": {
     "sectionTitle": "Perguntas frequentes",
     "sectionSubtitle": "Search · index · uplink",
     "q1": "O que é a QuintanaDev?",
-    "a1": "A QuintanaDev é o estúdio de software de Juniors Quintana em Caracas, Venezuela. Desenvolvimento mobile sênior: apps iOS/Android 100% funcionais com site oficial, CMS e backoffice.",
-    "q2": "Que tipo de produtos você constrói?",
-    "a2": "Sistemas completos. TerraLiam: jogo familiar com mapas, câmera e IA, site oficial e painel Ops. App MiDoc: gestão clínica móvel para pacientes, médicos e administradores, com o seu site. Também landings e CMS sob medida.",
+    "a1": "A QuintanaDev é o estúdio de Juniors Quintana, engenheiro de software sênior em Caracas. Trajetória em sistemas de pagamentos de alta exigência e desenvolvimento de produtos digitais próprios.",
+    "q2": "Que tipo de software você constrói?",
+    "a2": "Qualquer produto que precise de app, web e backoffice. TerraLiam e App MiDoc estão em produção: um jogo familiar com mapas e IA, e uma plataforma clínica móvel para pacientes, médicos e administradores.",
     "q3": "Como contactar a QuintanaDev?",
     "a3": "Use o formulário de contato nesta página. A equipe opera no horário UTC-4 (Caracas)."
   },

@@ -11,16 +11,23 @@ type Props = {
   services?: Service[];
 };
 
-export function SeoContent(_props: Props = {}) {
+export function SeoContent({ faqs = [], services = [] }: Props = {}) {
   const { t } = useTranslation();
 
-  // Public offer is always code/i18n (mobile apps + web + CMS). CMS offer rows are ignored.
-  const serviceItems = SERVICES.map((item) =>
-    localizeService(item.title, item.text, t)
-  );
-  const faqItems = FAQS.map((item) =>
-    localizeFaq(item.question, item.answer, t)
-  );
+  const serviceItems = (
+    services.length
+      ? services.map((item) => ({ title: item.title, text: item.description }))
+      : SERVICES.map((item) => ({ title: item.title, text: item.text }))
+  ).map((item) => localizeService(item.title, item.text, t));
+
+  const faqItems = (
+    faqs.length
+      ? faqs.map((item) => ({ question: item.question, answer: item.answer }))
+      : FAQS.map((item) => ({
+          question: item.question,
+          answer: item.answer,
+        }))
+  ).map((item) => localizeFaq(item.question, item.answer, t));
 
   return (
     <>

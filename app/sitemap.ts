@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { OG_HOST, SITE_URL } from "@/lib/seo";
+import { SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -15,12 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
-    },
-    {
-      url: `${OG_HOST}/`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.4,
     },
   ];
 }

@@ -46,8 +46,9 @@ export const metadata: Metadata = {
   keywords: [
     "QuintanaDev",
     "Juniors Quintana",
-    "desarrollador fullstack",
-    "desarrollador mobile",
+    "ingeniero de software senior",
+    "sistemas de pagos",
+    "productos digitales",
     "Flutter",
     "Dart",
     "Next.js",
@@ -104,7 +105,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "QuintanaDev — desarrollador mobile senior, apps, web y CMS",
+        alt: "QuintanaDev — Juniors Quintana, software senior y productos digitales",
       },
       {
         url: LOGO_URL,

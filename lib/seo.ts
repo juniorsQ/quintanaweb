@@ -2,9 +2,9 @@ export const SITE_URL = "https://quintanadev.us";
 export const OG_HOST = "https://og.quintanadev.us";
 export const SITE_NAME = "QuintanaDev";
 export const SITE_TITLE =
-  "QuintanaDev | Desarrollador Mobile Senior — apps, web y CMS";
+  "QuintanaDev | Juniors Quintana — Software senior y productos digitales";
 export const SITE_DESCRIPTION =
-  "QuintanaDev — Juniors Quintana. Desarrollo mobile senior: apps iOS/Android 100% funcionales con su web oficial, CMS y backoffice. Productos: TerraLiam y App MiDoc.";
+  "Juniors Quintana, ingeniero de software senior en Caracas. Trayectoria en sistemas de pagos de alta exigencia y productos propios en producción: TerraLiam y App MiDoc.";
 
 export const OG_IMAGE = `${OG_HOST}/og.jpg`;
 export const LOGO_URL = `${SITE_URL}/logo.png`;
@@ -18,24 +18,27 @@ export const DEFAULT_LAST_NAME = "Quintana";
 export const DEFAULT_LOCATION = "Caracas, Venezuela";
 export const DEFAULT_EMAIL = "quintanajuniors@gmail.com";
 export const DEFAULT_TAGLINE =
-  "MOBILE SENIOR // APPS COMPLETAS // WEB + CMS";
+  "SOFTWARE SENIOR // SISTEMAS DE ALTA EXIGENCIA // PRODUCTOS EN PRODUCCIÓN";
 export const DEFAULT_BIO =
-  "Desarrollador mobile senior. Diseño y entrego aplicaciones móviles 100% funcionales (iOS y Android) con su web oficial, CMS y backoffice. Productos propios: TerraLiam y App MiDoc. Stack: Flutter/Dart, TypeScript, Next.js/Vue, Supabase, Firebase, mapas, cámara, auth, notificaciones e IA aplicada.";
+  "Más de ocho años construyendo software en entornos de alta exigencia. Mi experiencia plena está en el mundo de los pagos: aplicativos para terminales POS, mensajería financiera ISO8583, criptografía y productos Android de misión crítica. Esa misma disciplina —arquitectura, seguridad, trazabilidad y salida a producción— la aplico como experto en cualquier tipo de aplicación. Lo demuestran productos propios en producción: TerraLiam, un juego familiar al aire libre con mapas, cámara e IA, web oficial y panel de operación; y App MiDoc, una plataforma clínica móvil para pacientes, médicos y administradores. Flutter, Dart, TypeScript, Next.js, Vue, Supabase y Firebase.";
 
-export const SOCIAL_PROFILES = ["https://github.com/juniorsQ"] as const;
+export const SOCIAL_PROFILES = [
+  "https://github.com/juniorsQ",
+  "https://www.linkedin.com/in/juniors-quintana-11a90a182",
+] as const;
 
 export const SERVICES = [
   {
-    title: "Apps móviles 100% funcionales",
-    text: "Aplicaciones iOS/Android con Flutter: mapas, cámara, autenticación, notificaciones, multimedia y publicación en Play Store / App Store. Arquitectura limpia y UX lista para producción.",
+    title: "Aplicaciones móviles a producción",
+    text: "Apps iOS y Android con Flutter: mapas, cámara, autenticación, notificaciones, multimedia y publicación en tiendas. El mismo rigor de un sistema de misión crítica, aplicado a tu producto.",
   },
   {
-    title: "Web oficial + CMS / backoffice",
-    text: "La web del producto y el panel para operarlo: usuarios, contenidos, métricas, roles y publicación. Next.js/Vue, Supabase/Firebase, auth y storage.",
+    title: "Web, CMS y backoffice",
+    text: "Sitio oficial y panel para operar el producto: usuarios, contenidos, roles, métricas y publicación. Next.js o Vue, con Supabase o Firebase.",
   },
   {
-    title: "Sistema completo de punta a punta",
-    text: "App + web + backend + CMS. Del concepto al release: discovery, UI, APIs, privacidad, CI/CD y tiendas. Un senior que cierra el ciclo sin fragmentar el equipo.",
+    title: "Producto digital completo",
+    text: "App + web + backend. Del concepto al release: arquitectura, UI, APIs, privacidad, CI/CD y operación real. TerraLiam y App MiDoc son el estándar que aplico.",
   },
 ] as const;
 
@@ -43,12 +46,12 @@ export const FAQS = [
   {
     question: "¿Qué es QuintanaDev?",
     answer:
-      "QuintanaDev es el estudio de software de Juniors Quintana en Caracas, Venezuela. Desarrollo mobile senior: apps iOS/Android 100% funcionales con su web oficial, CMS y backoffice.",
+      "QuintanaDev es el estudio de Juniors Quintana, ingeniero de software senior en Caracas. Trayectoria en sistemas de pagos de alta exigencia y desarrollo de productos digitales propios.",
   },
   {
-    question: "¿Qué tipo de productos construyes?",
+    question: "¿Qué tipo de software construyes?",
     answer:
-      "Sistemas completos. TerraLiam: juego familiar con mapas, cámara e IA, web oficial y panel Ops. App MiDoc: gestión clínica móvil para pacientes, médicos y administradores, con su web. También landings y CMS a medida.",
+      "Cualquier producto que requiera app, web y backoffice. TerraLiam y App MiDoc están en producción: un juego familiar con mapas e IA, y una plataforma clínica móvil para pacientes, médicos y administradores.",
   },
   {
     question: "¿Cómo contactar a QuintanaDev?",
@@ -135,7 +138,7 @@ export const jsonLd = {
       "@type": "Person",
       "@id": `${SITE_URL}/#person`,
       name: "Juniors Quintana",
-      jobTitle: "Desarrollador Mobile Senior",
+      jobTitle: "Ingeniero de software senior",
       url: SITE_URL,
       worksFor: { "@id": `${SITE_URL}/#organization` },
       image: LOGO_URL,
@@ -157,11 +160,11 @@ export const jsonLd = {
       provider: { "@id": `${SITE_URL}/#person` },
       areaServed: "VE",
       serviceType: [
-        "Desarrollo mobile Flutter",
-        "Apps Android e iOS",
-        "Web oficial y CMS",
+        "Desarrollo de aplicaciones móviles",
+        "Productos digitales fullstack",
+        "Web y CMS",
         "Backoffice y APIs",
-        "Productos digitales completos",
+        "Software senior a producción",
       ],
     },
     {
