@@ -1,5 +1,27 @@
 import { createClientBrowser } from "@/lib/supabase/client";
-import type { PortfolioData } from "@/lib/types";
+import { isPaymentOfferCopy } from "@/lib/i18n/cms";
+import type { Experience, PortfolioData, Project, Skill } from "@/lib/types";
+
+const PUBLIC_EXPERIENCE_FALLBACK =
+  "Desarrollo de aplicaciones web y móviles, CMS/backoffice y sistemas internos en producción.";
+
+function publicExperiences(items: Experience[]): Experience[] {
+  return items.map((item) =>
+    isPaymentOfferCopy(item.title, item.description)
+      ? { ...item, description: PUBLIC_EXPERIENCE_FALLBACK }
+      : item
+  );
+}
+
+function publicSkills(items: Skill[]): Skill[] {
+  return items.filter((item) => !isPaymentOfferCopy(item.name, item.icon));
+}
+
+function publicProjects(items: Project[]): Project[] {
+  return items.filter(
+    (item) => !isPaymentOfferCopy(item.title, item.summary, item.technologies)
+  );
+}
 
 export async function fetchPortfolioData(): Promise<PortfolioData> {
   const supabase = createClientBrowser();
@@ -67,14 +89,14 @@ export async function fetchPortfolioData(): Promise<PortfolioData> {
   return {
     profile: profileRes.data,
     socialLinks: socialRes.data ?? [],
-    experiences: experienceRes.data ?? [],
+    experiences: publicExperiences(experienceRes.data ?? []),
     education: educationRes.data ?? [],
-    skills: skillsRes.data ?? [],
+    skills: publicSkills(skillsRes.data ?? []),
     workflowItems: workflowRes.data ?? [],
     certifications: certsRes.data ?? [],
-    projects: projectsRes.data ?? [],
-    services: servicesRes.data ?? [],
-    faqs: faqsRes.data ?? [],
+    projects: publicProjects(projectsRes.data ?? []),
+    services: [],
+    faqs: [],
   };
 }
 

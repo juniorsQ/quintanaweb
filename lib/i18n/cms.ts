@@ -1,4 +1,4 @@
-import { DEFAULT_BIO, DEFAULT_TAGLINE, FAQS, SERVICES } from "@/lib/seo";
+import { FAQS, SERVICES } from "@/lib/seo";
 
 const SERVICE_KEYS: Record<string, "mobile" | "fullstack" | "product"> = {
   [SERVICES[0].title]: "mobile",
@@ -19,37 +19,26 @@ const WORKFLOW_KEYS: Record<string, string> = {
   "Desarrollo ágil y Scrum": "agile",
 };
 
-const LEGACY_PAYMENT_MARKERS = [
-  "ISO8583",
-  "terminales de pago",
-  "payment-terminal",
-  "PAYMENT SYSTEMS",
-  "sistemas de pago EMV",
-  "kernels EMV",
-];
+const PAYMENT_OFFER_RE =
+  /\b(pos|iso\s*8583|emv|dukpt|3des|mtip|payment|pagos?|pasarela|adquirente|acquirer|card-present|terminal(?:es)? de pago|sistemas? de pago|software de pago|mensajer[ií]a financiera|asesor[ií]as?)\b/i;
 
 type TFn = (key: string) => string;
 
-function looksLikeLegacyPaymentCopy(text: string) {
-  return LEGACY_PAYMENT_MARKERS.some((marker) => text.includes(marker));
+export function isPaymentOfferCopy(...parts: Array<string | null | undefined>) {
+  return parts.some((part) => Boolean(part && PAYMENT_OFFER_RE.test(part)));
 }
 
-export function localizeBio(bio: string | null | undefined, t: TFn) {
-  if (!bio || bio === DEFAULT_BIO || looksLikeLegacyPaymentCopy(bio)) {
-    return t("content.bio");
-  }
-  return bio;
+/** Public bio never comes from CMS. */
+export function localizeBio(_bio: string | null | undefined, t: TFn) {
+  return t("content.bio");
 }
 
-export function localizeTagline(tagline: string | null | undefined, t: TFn) {
-  if (
-    !tagline ||
-    tagline === DEFAULT_TAGLINE ||
-    looksLikeLegacyPaymentCopy(tagline)
-  ) {
-    return t("content.tagline");
-  }
-  return tagline;
+/** Public tagline never comes from CMS. */
+export function localizeTagline(
+  _tagline: string | null | undefined,
+  t: TFn
+) {
+  return t("content.tagline");
 }
 
 export function localizeService(
@@ -72,6 +61,9 @@ export function localizeFaq(
 ): { question: string; answer: string } {
   const key = FAQ_KEYS[question];
   if (!key) {
+    if (isPaymentOfferCopy(question, answer)) {
+      return { question: t("faq.q1"), answer: t("faq.a1") };
+    }
     if (answer.includes("@gmail.com") || answer.includes("quintanajuniors")) {
       return { question, answer: t("faq.a3") };
     }

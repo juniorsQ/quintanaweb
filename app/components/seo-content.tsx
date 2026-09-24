@@ -14,7 +14,7 @@ type Props = {
 export function SeoContent(_props: Props = {}) {
   const { t } = useTranslation();
 
-  // Public offer is always code/i18n (fullstack + mobile). CMS POS-era copy is ignored.
+  // Public offer is always code/i18n (mobile apps + web + CMS). CMS offer rows are ignored.
   const serviceItems = SERVICES.map((item) =>
     localizeService(item.title, item.text, t)
   );

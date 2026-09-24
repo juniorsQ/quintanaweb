@@ -2,9 +2,9 @@ export const SITE_URL = "https://quintanadev.us";
 export const OG_HOST = "https://og.quintanadev.us";
 export const SITE_NAME = "QuintanaDev";
 export const SITE_TITLE =
-  "QuintanaDev | Desarrollador Fullstack y Mobile Senior";
+  "QuintanaDev | Desarrollador Mobile Senior — apps, web y CMS";
 export const SITE_DESCRIPTION =
-  "QuintanaDev — Juniors Quintana. Desarrollo fullstack y mobile senior: apps Flutter, web modernas, APIs y productos de punta a punta. Caracas, Venezuela.";
+  "QuintanaDev — Juniors Quintana. Desarrollo mobile senior: apps iOS/Android 100% funcionales con su web oficial, CMS y backoffice. Productos: TerraLiam y App MiDoc.";
 
 export const OG_IMAGE = `${OG_HOST}/og.jpg`;
 export const LOGO_URL = `${SITE_URL}/logo.png`;
@@ -18,24 +18,24 @@ export const DEFAULT_LAST_NAME = "Quintana";
 export const DEFAULT_LOCATION = "Caracas, Venezuela";
 export const DEFAULT_EMAIL = "quintanajuniors@gmail.com";
 export const DEFAULT_TAGLINE =
-  "FULLSTACK // MOBILE SENIOR // PRODUCT BUILDER";
+  "MOBILE SENIOR // APPS COMPLETAS // WEB + CMS";
 export const DEFAULT_BIO =
-  "Desarrollador fullstack y mobile senior con más de 8 años de experiencia. Vengo del mundo de sistemas de alta exigencia (pagos e integraciones críticas), y hoy construyo productos digitales completos: apps Flutter, webs modernas, APIs, backoffice y despliegue a producción. Stack actual: Flutter/Dart, TypeScript, Next.js/Vue, Supabase, Firebase, mapas, cámara, auth, notificaciones e IA aplicada. Productos propios: TerraLiam y App MiDoc.";
+  "Desarrollador mobile senior. Diseño y entrego aplicaciones móviles 100% funcionales (iOS y Android) con su web oficial, CMS y backoffice. Productos propios: TerraLiam y App MiDoc. Stack: Flutter/Dart, TypeScript, Next.js/Vue, Supabase, Firebase, mapas, cámara, auth, notificaciones e IA aplicada.";
 
 export const SOCIAL_PROFILES = ["https://github.com/juniorsQ"] as const;
 
 export const SERVICES = [
   {
-    title: "Apps móviles senior (Flutter)",
-    text: "Apps iOS/Android con Flutter: mapas, cámara, brújula, autenticación, notificaciones, multimedia e integración con tiendas (Play / App Store). Arquitectura limpia, rendimiento y UX lista para producción.",
+    title: "Apps móviles 100% funcionales",
+    text: "Aplicaciones iOS/Android con Flutter: mapas, cámara, autenticación, notificaciones, multimedia y publicación en Play Store / App Store. Arquitectura limpia y UX lista para producción.",
   },
   {
-    title: "Fullstack web y APIs",
-    text: "Landings, paneles y backends con TypeScript, Next.js/Vue, Supabase/Firebase, auth, storage, RLS y edge functions. Desde el MVP hasta un producto operable con métricas y backoffice.",
+    title: "Web oficial + CMS / backoffice",
+    text: "La web del producto y el panel para operarlo: usuarios, contenidos, métricas, roles y publicación. Next.js/Vue, Supabase/Firebase, auth y storage.",
   },
   {
-    title: "Producto de punta a punta",
-    text: "Te acompaño del concepto al release: discovery, UI, app + web, backend, privacidad/policies, CI/CD y iteración. Ideal si necesitas un senior que cierre el ciclo sin fragmentar el equipo.",
+    title: "Sistema completo de punta a punta",
+    text: "App + web + backend + CMS. Del concepto al release: discovery, UI, APIs, privacidad, CI/CD y tiendas. Un senior que cierra el ciclo sin fragmentar el equipo.",
   },
 ] as const;
 
@@ -43,12 +43,12 @@ export const FAQS = [
   {
     question: "¿Qué es QuintanaDev?",
     answer:
-      "QuintanaDev es el estudio de software de Juniors Quintana en Caracas, Venezuela. Ofrece desarrollo fullstack y mobile senior: apps Flutter, webs, APIs y productos digitales de punta a punta.",
+      "QuintanaDev es el estudio de software de Juniors Quintana en Caracas, Venezuela. Desarrollo mobile senior: apps iOS/Android 100% funcionales con su web oficial, CMS y backoffice.",
   },
   {
     question: "¿Qué tipo de productos construyes?",
     answer:
-      "Apps y plataformas reales en producción o en lanzamiento. Por ejemplo TerraLiam (juego familiar con mapas, cámara e IA) y App MiDoc (gestión clínica móvil para pacientes, médicos y administradores). También landings, paneles Ops y backends con Supabase/Firebase.",
+      "Sistemas completos. TerraLiam: juego familiar con mapas, cámara e IA, web oficial y panel Ops. App MiDoc: gestión clínica móvil para pacientes, médicos y administradores, con su web. También landings y CMS a medida.",
   },
   {
     question: "¿Cómo contactar a QuintanaDev?",
@@ -135,7 +135,7 @@ export const jsonLd = {
       "@type": "Person",
       "@id": `${SITE_URL}/#person`,
       name: "Juniors Quintana",
-      jobTitle: "Desarrollador Fullstack y Mobile Senior",
+      jobTitle: "Desarrollador Mobile Senior",
       url: SITE_URL,
       worksFor: { "@id": `${SITE_URL}/#organization` },
       image: LOGO_URL,
@@ -158,10 +158,10 @@ export const jsonLd = {
       areaServed: "VE",
       serviceType: [
         "Desarrollo mobile Flutter",
-        "Desarrollo fullstack",
         "Apps Android e iOS",
-        "APIs y backends",
-        "Productos digitales",
+        "Web oficial y CMS",
+        "Backoffice y APIs",
+        "Productos digitales completos",
       ],
     },
     {

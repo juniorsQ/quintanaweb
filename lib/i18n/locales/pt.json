@@ -16,29 +16,29 @@
     "comms": "COMMS"
   },
   "content": {
-    "tagline": "FULLSTACK // MOBILE SENIOR // PRODUCT BUILDER",
-    "bio": "Desenvolvedor fullstack e mobile sênior com mais de 8 anos de experiência. Venho do mundo de sistemas de alta exigência (pagamentos e integrações críticas), e hoje construo produtos digitais completos: apps Flutter, webs modernas, APIs, backoffice e deploy em produção. Stack atual: Flutter/Dart, TypeScript, Next.js/Vue, Supabase, Firebase, mapas, câmera, auth, notificações e IA aplicada. Produtos próprios: TerraLiam e App MiDoc.",
+    "tagline": "MOBILE SENIOR // APPS COMPLETOS // WEB + CMS",
+    "bio": "Desenvolvedor mobile sênior. Projeto e entrego aplicativos iOS/Android 100% funcionais com o site oficial, CMS e backoffice. Produtos próprios: TerraLiam e App MiDoc. Stack: Flutter/Dart, TypeScript, Next.js/Vue, Supabase, Firebase, mapas, câmera, auth, notificações e IA aplicada.",
     "location": "Caracas, Venezuela"
   },
   "services": {
     "sectionTitle": "Serviços",
-    "sectionSubtitle": "Fullstack · mobile · produto · mission control",
+    "sectionSubtitle": "Apps móveis · web · CMS · backoffice",
     "pageKicker": "Serviços · QuintanaDev",
-    "pageTitle": "Desenvolvimento fullstack e mobile sênior",
-    "mobileTitle": "Apps móveis sênior (Flutter)",
-    "mobileText": "Apps iOS/Android com Flutter: mapas, câmera, bússola, autenticação, notificações, mídia e publicação nas lojas (Play / App Store). Arquitetura limpa, performance e UX pronta para produção.",
-    "fullstackTitle": "Fullstack web e APIs",
-    "fullstackText": "Landings, painéis e backends com TypeScript, Next.js/Vue, Supabase/Firebase, auth, storage, RLS e edge functions. Do MVP a um produto operável com métricas e backoffice.",
-    "productTitle": "Produto de ponta a ponta",
-    "productText": "Do conceito ao release: discovery, UI, app + web, backend, privacidade/policies, CI/CD e iteração. Ideal se você precisa de um sênior que fecha o ciclo completo."
+    "pageTitle": "Apps móveis 100% funcionais, com web e CMS",
+    "mobileTitle": "Apps móveis 100% funcionais",
+    "mobileText": "Apps iOS/Android com Flutter: mapas, câmera, autenticação, notificações, mídia e publicação na Play Store / App Store. Arquitetura limpa e UX pronta para produção.",
+    "fullstackTitle": "Web oficial + CMS / backoffice",
+    "fullstackText": "O site do produto e o painel para operá-lo: usuários, conteúdos, métricas, papéis e publicação. Next.js/Vue, Supabase/Firebase, auth e storage.",
+    "productTitle": "Sistema completo de ponta a ponta",
+    "productText": "App + web + backend + CMS. Do conceito ao release: discovery, UI, APIs, privacidade, CI/CD e lojas. Um sênior que fecha o ciclo."
   },
   "faq": {
     "sectionTitle": "Perguntas frequentes",
     "sectionSubtitle": "Search · index · uplink",
     "q1": "O que é a QuintanaDev?",
-    "a1": "A QuintanaDev é o estúdio de software de Juniors Quintana em Caracas, Venezuela. Oferece desenvolvimento fullstack e mobile sênior: apps Flutter, webs, APIs e produtos digitais de ponta a ponta.",
+    "a1": "A QuintanaDev é o estúdio de software de Juniors Quintana em Caracas, Venezuela. Desenvolvimento mobile sênior: apps iOS/Android 100% funcionais com site oficial, CMS e backoffice.",
     "q2": "Que tipo de produtos você constrói?",
-    "a2": "Apps e plataformas reais em produção ou lançamento. Por exemplo TerraLiam (jogo familiar com mapas, câmera e IA) e App MiDoc (gestão clínica móvel para pacientes, médicos e administradores). Também landings, painéis Ops e backends com Supabase/Firebase.",
+    "a2": "Sistemas completos. TerraLiam: jogo familiar com mapas, câmera e IA, site oficial e painel Ops. App MiDoc: gestão clínica móvel para pacientes, médicos e administradores, com o seu site. Também landings e CMS sob medida.",
     "q3": "Como contactar a QuintanaDev?",
     "a3": "Use o formulário de contato nesta página. A equipe opera no horário UTC-4 (Caracas)."
   },

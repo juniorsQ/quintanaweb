@@ -16,29 +16,29 @@
     "comms": "COMMS"
   },
   "content": {
-    "tagline": "FULLSTACK // MOBILE SENIOR // PRODUCT BUILDER",
-    "bio": "Senior fullstack and mobile developer with 8+ years of experience. I come from high-reliability systems (payments and critical integrations), and today I build complete digital products: Flutter apps, modern webs, APIs, backoffice and production deploys. Current stack: Flutter/Dart, TypeScript, Next.js/Vue, Supabase, Firebase, maps, camera, auth, notifications and applied AI. Own products: TerraLiam and App MiDoc.",
+    "tagline": "MOBILE SENIOR // COMPLETE APPS // WEB + CMS",
+    "bio": "Senior mobile developer. I design and ship fully functional iOS/Android apps with their official website, CMS and backoffice. Own products: TerraLiam and App MiDoc. Stack: Flutter/Dart, TypeScript, Next.js/Vue, Supabase, Firebase, maps, camera, auth, notifications and applied AI.",
     "location": "Caracas, Venezuela"
   },
   "services": {
     "sectionTitle": "Services",
-    "sectionSubtitle": "Fullstack · mobile · product · mission control",
+    "sectionSubtitle": "Mobile apps · web · CMS · backoffice",
     "pageKicker": "Services · QuintanaDev",
-    "pageTitle": "Senior fullstack and mobile development",
-    "mobileTitle": "Senior mobile apps (Flutter)",
-    "mobileText": "iOS/Android apps with Flutter: maps, camera, compass, auth, notifications, media and store releases (Play / App Store). Clean architecture, performance and production-ready UX.",
-    "fullstackTitle": "Fullstack web and APIs",
-    "fullstackText": "Landings, dashboards and backends with TypeScript, Next.js/Vue, Supabase/Firebase, auth, storage, RLS and edge functions. From MVP to an operable product with metrics and backoffice.",
-    "productTitle": "End-to-end product",
-    "productText": "From concept to release: discovery, UI, app + web, backend, privacy/policies, CI/CD and iteration. Ideal when you need a senior who closes the full loop."
+    "pageTitle": "Fully functional mobile apps, with web and CMS",
+    "mobileTitle": "Fully functional mobile apps",
+    "mobileText": "iOS/Android apps with Flutter: maps, camera, auth, notifications, media and Play Store / App Store release. Clean architecture and production-ready UX.",
+    "fullstackTitle": "Official web + CMS / backoffice",
+    "fullstackText": "The product website and the panel to run it: users, content, metrics, roles and publishing. Next.js/Vue, Supabase/Firebase, auth and storage.",
+    "productTitle": "Complete end-to-end system",
+    "productText": "App + web + backend + CMS. From concept to release: discovery, UI, APIs, privacy, CI/CD and stores. A senior who closes the loop."
   },
   "faq": {
     "sectionTitle": "Frequently asked questions",
     "sectionSubtitle": "Search · index · uplink",
     "q1": "What is QuintanaDev?",
-    "a1": "QuintanaDev is Juniors Quintana's software studio in Caracas, Venezuela. Senior fullstack and mobile development: Flutter apps, webs, APIs and end-to-end digital products.",
+    "a1": "QuintanaDev is Juniors Quintana's software studio in Caracas, Venezuela. Senior mobile development: fully functional iOS/Android apps with their official website, CMS and backoffice.",
     "q2": "What kind of products do you build?",
-    "a2": "Real apps and platforms in production or launch. For example TerraLiam (family outdoor game with maps, camera and AI) and App MiDoc (mobile clinical management for patients, doctors and admins). Also landings, Ops dashboards and Supabase/Firebase backends.",
+    "a2": "Complete systems. TerraLiam: family game with maps, camera and AI, official web and Ops panel. App MiDoc: mobile clinical management for patients, doctors and admins, plus its web. Also custom landings and CMS.",
     "q3": "How can I contact QuintanaDev?",
     "a3": "Use the contact form on this page. The team operates on UTC-4 (Caracas)."
   },
